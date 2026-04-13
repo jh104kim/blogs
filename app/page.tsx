@@ -8,16 +8,20 @@ export default function Home() {
   return (
     <div className="mx-auto w-full max-w-[1384px] flex-1 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
       <header className="mb-12 max-w-[65ch] sm:mb-16">
-        <p className="text-sm font-medium text-pewter">마크다운 · 정적 보내기</p>
+        <p className="text-sm font-medium text-pewter">
+          바이브 설계도 · Vibe Coding - 시스템 아키텍처 이해
+        </p>
         <h1 className="mt-2 text-[2rem] font-medium leading-tight tracking-tight text-carbon sm:text-[2.25rem]">
-          정적 블로그
+          JH의 AI 뿌시기
         </h1>
-        <p className="mt-5 text-[15px] leading-[1.65] text-graphite">
-          Next.js와 Tailwind로 만든 블로그입니다. 글은{" "}
-          <code className="rounded bg-ash px-1.5 py-0.5 font-mono text-[0.8125rem] text-carbon">
-            content
-          </code>{" "}
-          폴더의 마크다운을 gray-matter로 파싱하고, 본문은 HTML로 렌더링합니다.
+        <p className="mt-5 space-y-3 text-[15px] leading-[1.65] text-graphite">
+          <span className="block">
+            막막한 프롬프트 한 줄이 업무를 바꾸는 실질적인 자동화의 시작이 되고,
+          </span>
+          <span className="block">
+            수많은 에이전트와의 문답 끝에 비로소 AI를 도구 삼아 비즈니스를
+            설계한다.
+          </span>
         </p>
         <div className="mt-8">
           <Link

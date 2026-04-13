@@ -4,10 +4,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "정적 블로그",
-    template: "%s · 정적 블로그",
+    default: "JH의 AI 뿌시기",
+    template: "%s · JH의 AI 뿌시기",
   },
-  description: "마크다운 기반 Next.js 정적 블로그",
+  description:
+    "바이브 설계도 · Vibe Coding과 시스템 아키텍처—프롬프트·에이전트·하네스 엔지니어링 실전 글.",
 };
 
 export default function RootLayout({

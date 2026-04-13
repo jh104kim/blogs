@@ -42,7 +42,7 @@ export function SiteHeader() {
           href="/"
           className="text-[17px] font-medium tracking-tight text-carbon transition-colors duration-[330ms] hover:text-graphite"
         >
-          정적 블로그
+          JH의 AI 뿌시기
         </Link>
 
         <nav
