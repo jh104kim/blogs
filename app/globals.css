@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/*
+  DESIGN.md — Tesla-inspired tokens (light, minimal chrome)
+*/
+:root {
+  --electric-blue: #3e6ae1;
+  --pure-white: #ffffff;
+  --light-ash: #f4f4f4;
+  --carbon-dark: #171a20;
+  --graphite: #393c41;
+  --pewter: #5c5e62;
+  --silver-fog: #8e8e8e;
+  --cloud-gray: #eeeeee;
+  --pale-silver: #d0d1d2;
+  --frost: rgba(255, 255, 255, 0.75);
+
+  --background: var(--pure-white);
+  --foreground: var(--carbon-dark);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-electric: var(--electric-blue);
+  --color-carbon: var(--carbon-dark);
+  --color-graphite: var(--graphite);
+  --color-pewter: var(--pewter);
+  --color-ash: var(--light-ash);
+  --color-cloud: var(--cloud-gray);
+  --color-pale-silver: var(--pale-silver);
+  --color-frost: var(--frost);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+  scroll-padding-top: 3.5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--graphite);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* 마크다운 → HTML 본문: 가독성 (폭·행간·계층) */
+@layer components {
+  .post-body {
+    @apply mx-auto max-w-[65ch] text-graphite;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .post-body :where(h1) {
+    @apply mt-12 text-[1.75rem] font-medium leading-tight text-carbon first:mt-0;
+  }
+
+  .post-body :where(h2) {
+    @apply mt-12 border-b border-cloud pb-2 text-[1.25rem] font-medium leading-snug text-carbon;
+  }
+
+  .post-body :where(h3) {
+    @apply mt-10 text-[1.0625rem] font-medium leading-snug text-carbon;
+  }
+
+  .post-body :where(p) {
+    @apply mt-5 text-graphite;
+    line-height: 1.7;
+  }
+
+  .post-body :where(ul) {
+    @apply mt-5 list-disc space-y-2 pl-6 text-graphite;
+    line-height: 1.65;
+  }
+
+  .post-body :where(ol) {
+    @apply mt-5 list-decimal space-y-2 pl-6 text-graphite;
+    line-height: 1.65;
+  }
+
+  .post-body :where(li) {
+    @apply leading-relaxed;
+  }
+
+  .post-body :where(a) {
+    @apply font-normal text-pewter underline decoration-pale-silver underline-offset-[3px] transition-[color,box-shadow] duration-[330ms] ease-[cubic-bezier(0.5,0,0,0.75)] hover:text-graphite hover:decoration-graphite;
+  }
+
+  .post-body :where(code) {
+    @apply rounded bg-ash px-1.5 py-0.5 font-mono text-[0.8125rem] text-carbon;
+  }
+
+  .post-body :where(pre) {
+    @apply mt-6 overflow-x-auto rounded-[4px] border border-cloud bg-ash p-4 text-[0.8125rem] leading-relaxed text-carbon;
+  }
+
+  .post-body :where(pre code) {
+    @apply bg-transparent p-0;
+  }
+
+  .post-body :where(blockquote) {
+    @apply mt-6 border-l-[3px] border-pale-silver pl-4 text-pewter;
+    line-height: 1.65;
+  }
+
+  .post-body :where(table) {
+    @apply mt-6 w-full border-collapse text-[0.875rem];
+  }
+
+  .post-body :where(th) {
+    @apply border border-cloud bg-ash px-3 py-2.5 text-left font-medium text-carbon;
+  }
+
+  .post-body :where(td) {
+    @apply border border-cloud px-3 py-2.5 text-graphite;
+  }
+
+  .post-body :where(hr) {
+    @apply my-12 border-0 border-t border-cloud;
+  }
+
+  .post-body :where(img) {
+    @apply mt-8 h-auto max-w-full rounded-[12px];
+  }
+
+  .post-body :where(strong) {
+    @apply font-medium text-carbon;
+  }
+}
+
+/* 유틸: 프로스트 배경 (헤더) */
+.bg-frost {
+  background-color: var(--frost);
+}
